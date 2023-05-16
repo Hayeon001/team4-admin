@@ -5,15 +5,29 @@
 
   let chart = {
     init: ()=> {
+      chart.getData1();
+      chart.getData2();
+      chart.getData3();
+
+    },
+    getData1: () => {
+      $.ajax({
+        url:'chart01',
+        success: (data) => {
+          chart.display1(data);
+        }
+      });
+    },
+    display1: (data) => {
       Highcharts.chart('container1', {
         chart: {
           type: 'column'
         },
         title: {
-          text: 'Monthly Average Rainfall'
+          text: '월별, 성별별 총 판매금액 추이 차트'
         },
         subtitle: {
-          text: 'Source: WorldClimate.com'
+          text: 'Source: Mosinsa.com'
         },
         xAxis: {
           categories: [
@@ -35,13 +49,13 @@
         yAxis: {
           min: 0,
           title: {
-            text: 'Rainfall (mm)'
+            text: 'KRW'
           }
         },
         tooltip: {
           headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
           pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                  '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                  '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
           footerFormat: '</table>',
           shared: true,
           useHTML: true
@@ -52,29 +66,21 @@
             borderWidth: 0
           }
         },
-        series: [{
-          name: 'Tokyo',
-          data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,
-            194.1, 95.6, 54.4]
-
-        }, {
-          name: 'New York',
-          data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
-            106.6, 92.3]
-
-        }, {
-          name: 'London',
-          data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
-            51.2]
-
-        }, {
-          name: 'Berlin',
-          data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
-            51.1]
-
-        }]
+        series: data
       });
-      // Data retrieved from https://netmarketshare.com
+
+    },
+    getData2: () => {
+      $.ajax({
+        url:'chart02',
+        success: (data) => {
+          chart.display2(data);
+        }
+      });
+    },
+    display2: (data) => {
+
+// Data retrieved from https://netmarketshare.com
       Highcharts.chart('container2', {
         chart: {
           plotBackgroundColor: null,
@@ -83,7 +89,7 @@
           type: 'pie'
         },
         title: {
-          text: 'Browser market shares in May, 2020',
+          text: '판매 카테고리별 판매금액 비율추이',
           align: 'left'
         },
         tooltip: {
@@ -105,120 +111,90 @@
           }
         },
         series: [{
-          name: 'Brands',
+          name: '비율',
           colorByPoint: true,
-          data: [{
-            name: 'Chrome',
-            y: 70.67,
-            sliced: true,
-            selected: true
-          }, {
-            name: 'Edge',
-            y: 14.77
-          },  {
-            name: 'Firefox',
-            y: 4.86
-          }, {
-            name: 'Safari',
-            y: 2.63
-          }, {
-            name: 'Internet Explorer',
-            y: 1.53
-          },  {
-            name: 'Opera',
-            y: 1.40
-          }, {
-            name: 'Sogou Explorer',
-            y: 0.84
-          }, {
-            name: 'QQ',
-            y: 0.51
-          }, {
-            name: 'Other',
-            y: 2.6
-          }]
+          data: data
         }]
       });
+    },
 
+    getData3: () => {
+      $.ajax({
+        url:'chart03',
+        success: (data) => {
+          chart.display3(data);
+        }
+      });
+    },
+    display3: (data) => {
       Highcharts.chart('container3', {
-
+        chart: {
+          type: 'bar'
+        },
         title: {
-          text: 'U.S Solar Employment Growth by Job Category, 2010-2020',
+          text: 'Historic World Population by Region',
           align: 'left'
         },
-
         subtitle: {
-          text: 'Source: <a href="https://irecusa.org/programs/solar-jobs-census/" target="_blank">IREC</a>',
+          text: 'Source: <a ' +
+                  'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
+                  'target="_blank">Wikipedia.org</a>',
           align: 'left'
         },
-
-        yAxis: {
-          title: {
-            text: 'Number of Employees'
-          }
-        },
-
         xAxis: {
-          accessibility: {
-            rangeDescription: 'Range: 2010 to 2020'
+          categories: ['10', '20', '30', '40', '50'],
+          title: {
+            text: null
+          },
+          gridLineWidth: 1,
+          lineWidth: 0
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: 'Population (millions)',
+            align: 'high'
+          },
+          labels: {
+            overflow: 'justify'
+          },
+          gridLineWidth: 0
+        },
+        tooltip: {
+          valueSuffix: ' millions'
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: '50%',
+            dataLabels: {
+              enabled: true
+            },
+            groupPadding: 0.1
           }
         },
-
         legend: {
           layout: 'vertical',
           align: 'right',
-          verticalAlign: 'middle'
+          verticalAlign: 'top',
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor:
+                  Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+          shadow: true
         },
-
-        plotOptions: {
-          series: {
-            label: {
-              connectorAllowed: false
-            },
-            pointStart: 2010
-          }
+        credits: {
+          enabled: false
         },
-
         series: [{
-          name: 'Installation & Developers',
-          data: [43934, 48656, 65165, 81827, 112143, 142383,
-            171533, 165174, 155157, 161454, 154610]
-        }, {
-          name: 'Manufacturing',
-          data: [24916, 37941, 29742, 29851, 32490, 30282,
-            38121, 36885, 33726, 34243, 31050]
-        }, {
-          name: 'Sales & Distribution',
-          data: [11744, 30000, 16005, 19771, 20185, 24377,
-            32147, 30912, 29243, 29213, 25663]
-        }, {
-          name: 'Operations & Maintenance',
-          data: [null, null, null, null, null, null, null,
-            null, 11164, 11218, 10077]
-        }, {
-          name: 'Other',
-          data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
-            17300, 13053, 11906, 10073]
-        }],
-
-        responsive: {
-          rules: [{
-            condition: {
-              maxWidth: 500
-            },
-            chartOptions: {
-              legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom'
-              }
-            }
-          }]
-        }
-
+          name: 'Year 1990',
+          data: data
+        }]
       });
-
     }
+
+
   };
 
   $( ()=> {
@@ -246,7 +222,7 @@
   <div class="card mb-4">
     <div class="card-header">
       <i class="fas fa-chart-area me-1"></i>
-      Area Chart Example
+      Monthly Total Sales Chart by gender
     </div>
     <div class="card-body">
       <div id="container1"></div>
