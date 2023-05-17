@@ -36,7 +36,7 @@
                     <c:forEach var="obj" items="${qlist}">
                         <tr>
                             <td>
-                                <a href="#" id="qnaid" data-toggle="modal" data-target="#answermodal">${obj.id}</a>
+                                <a href="/qna/detail?id=${obj.id}">${obj.id}</>
                             </td>
                             <td>${obj.answer}</td>
                             <td>${obj.title}</td>
@@ -45,30 +45,7 @@
                         </tr>
                     </c:forEach>
 
-                    <!-- Replay Modal -->
-                    <div id="answermodal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">ANSWER</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="answer_form">
-                                        <div class="form-group">
-                                            <textarea id="answer" rows="4" cols="60"></textarea>
-                                        </div>
-                                        <div>
-                                            <button type="button" id="item_add_btn" class="btn btn-outline-primary">Done</button>
-                                            <button type="button" id="modalclose_btn" class="btn btn-outline-primary" data-dismiss="modal">CLOSE</button>
-                                        </div>
-                                    </form>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Replay Modal END-->
                      </tbody>
                 </table>
             </div>
@@ -76,3 +53,31 @@
     </div>
 </main>
 
+
+<%--
+<!-- Replay Modal -->
+<div id="answermodal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">ANSWER</h4>
+            </div>
+            <div class="modal-body">
+                <form id="answer_form">
+                    <div class="form-group">
+                        <textarea id="answer" rows="4" cols="60"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" id="item_add_btn" class="btn btn-outline-primary">Done</button>
+                        <button type="button" id="modalclose_btn" class="btn btn-outline-primary" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Replay Modal END-->
+
+--%>

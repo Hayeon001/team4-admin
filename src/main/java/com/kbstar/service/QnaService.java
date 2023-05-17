@@ -37,4 +37,5 @@ public class QnaService implements KBService<Integer, Qna> {
     public List<Qna> get() throws Exception {
         return mapper.selectall();
     }
+
 }

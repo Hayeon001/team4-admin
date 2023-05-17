@@ -18,10 +18,13 @@ public class Qna {
     private int q_id;
     private String cust_id;
     private String adm_id;
+
+    private String question;
     private String answer;
 
-    public Qna(int id, String answer, String title, String cust_id, Date rdate){
+    public Qna(int id, String question, String answer, String title, String cust_id, Date rdate){
         this.id = id;
+        this.question = question;
         this.answer = answer;
         this.title = title;
         this.cust_id = cust_id;

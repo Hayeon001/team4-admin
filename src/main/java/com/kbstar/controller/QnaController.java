@@ -1,13 +1,16 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Item;
 import com.kbstar.dto.Qna;
 import com.kbstar.service.QnaService;
+import com.kbstar.util.FileUploadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -29,4 +32,18 @@ public class QnaController {
         return "index";
     }
 
+    @RequestMapping("/detail")
+    public String detail(Model model,int id) throws Exception {
+        Qna qna = null;
+        qna = qnaService.get(id);
+        model.addAttribute("gqna",qna);
+        model.addAttribute("center",dir+"qnadetail");
+        return "index";
+    }
+
+    @RequestMapping("/answerimpl")
+    public String answerimpl(Model model, Qna qna) throws Exception {
+        qnaService.register(qna);
+        return "redirect:/qna/detail?id="+qna.getId();
+    }
 }
