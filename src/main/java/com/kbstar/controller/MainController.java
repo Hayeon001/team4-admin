@@ -2,6 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Adm;
 import com.kbstar.service.AdmService;
+import com.kbstar.service.CustService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 @Controller
 public class MainController {
-
+    @Autowired
+    CustService custService;
     @Autowired
     private BCryptPasswordEncoder encoder;
     @Autowired
@@ -23,16 +25,7 @@ public class MainController {
     public String main() throws Exception {
         return "index";
     };
-    @RequestMapping("/cust")
-    public String cust(Model model) throws Exception {
-        model.addAttribute("center", "cust");
-        return "index";
-    };
-    @RequestMapping("/item")
-    public String item(Model model) throws Exception {
-        model.addAttribute("center", "item");
-        return "index";
-    };
+
     @RequestMapping("/qna")
     public String qna(Model model) throws Exception {
         model.addAttribute("center", "qna");
@@ -86,6 +79,8 @@ public class MainController {
                     nextPage = "center";
                     session.setMaxInactiveInterval(600000);
                     session.setAttribute("loginadm", adm);
+                    log.info("----------------------------------------------------------------------------------");
+                    log.info(adm.toString());
                 }
             } else {
                 log.info("불일치");
