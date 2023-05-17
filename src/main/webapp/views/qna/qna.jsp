@@ -25,20 +25,26 @@
                     <thead>
                     <tr>
                         <th>No</th>
+                        <th>Answer</th>
                         <th>Title</th>
                         <th>Writer</th>
                         <th>Rdate</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <a href="#" id="itemid" data-toggle="modal" data-target="#answermodal">100</a>
-                        </td>
-                        <td>제발 전화좀 받으세요</td>
-                        <td>개빡친사람</td>
-                        <td>2023-05-11</td>
-                    </tr>
+
+                    <c:forEach var="obj" items="${qlist}">
+                        <tr>
+                            <td>
+                                <a href="#" id="qnaid" data-toggle="modal" data-target="#answermodal">${obj.id}</a>
+                            </td>
+                            <td>${obj.answer}</td>
+                            <td>${obj.title}</td>
+                            <td>${obj.cust_id}</td>
+                            <td>${obj.rdate}</td>
+                        </tr>
+                    </c:forEach>
+
                     <!-- Replay Modal -->
                     <div id="answermodal" class="modal fade" role="dialog">
                         <div class="modal-dialog">

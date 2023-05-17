@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kbstar.mapper.QnaMapper">
+
+    <select id="selectall" resultType="Qna">
+        SELECT q1.id, NVL2(q2.q_id,'Y','N') as answer, q1.title,q1.content,q1.cust_id,q1.rdate
+        FROM qna q1 LEFT OUTER JOIN qna q2 ON q1.id = q2.q_id
+        where q1.Q_ID is null
+    </select>
+
+<!--    <select id="select" parameterType="String" resultType="Qna">
+        SELECT * FROM qna WHERE id=#{id}
+    </select>
+
+    <insert id="insert" parameterType="Qna">
+        INSERT INTO qna VALUES (#{id},#{pwd},#{name},#{age},#{gender})
+    </insert>
+    <update id="update" parameterType="Qna">
+        UPDATE qna SET NAME=#{name},PWD=#{pwd} ,AGE=#{age},GENDER=#{gender} WHERE id=#{id}
+    </update>
+    <delete id="delete" parameterType="String">
+        DELETE FROM qna WHERE id=#{id}
+    </delete>-->
+
+</mapper>

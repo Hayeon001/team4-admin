@@ -26,16 +26,6 @@ public class MainController {
         return "index";
     };
 
-    @RequestMapping("/qna")
-    public String qna(Model model) throws Exception {
-        model.addAttribute("center", "qna");
-        return "index";
-    };
-    @RequestMapping("/qna2")
-    public String qna2(Model model) throws Exception {
-        model.addAttribute("center", "qna2");
-        return "index";
-    };
     @RequestMapping("/chart")
     public String chart(Model model) throws Exception {
         model.addAttribute("center", "chart");
