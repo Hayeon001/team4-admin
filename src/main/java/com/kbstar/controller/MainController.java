@@ -46,6 +46,11 @@ public class MainController {
         model.addAttribute("center", "register");
         return "index";
     };
+    @RequestMapping("/ws")
+    public String ws(Model model) {
+        model.addAttribute("center", "ws");
+        return "index";
+    };
     @RequestMapping("/registerimpl")
     public String registerimpl(Model model, Adm adm, HttpSession session) throws Exception {
         try {
