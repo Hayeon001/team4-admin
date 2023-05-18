@@ -132,13 +132,13 @@
           type: 'bar'
         },
         title: {
-          text: 'Historic World Population by Region',
+          text: '2022년 연령대별 매출액 비율',
           align: 'left'
         },
         subtitle: {
           text: 'Source: <a ' +
-                  'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
-                  'target="_blank">Wikipedia.org</a>',
+                  'href="https://mosinsa.com"' +
+                  'target="_blank">Mosinsa.org</a>',
           align: 'left'
         },
         xAxis: {
@@ -151,17 +151,13 @@
         },
         yAxis: {
           min: 0,
-          title: {
-            text: 'Population (millions)',
-            align: 'high'
-          },
           labels: {
             overflow: 'justify'
           },
           gridLineWidth: 0
         },
         tooltip: {
-          valueSuffix: ' millions'
+          valueSuffix: ' 원'
         },
         plotOptions: {
           bar: {
@@ -188,7 +184,7 @@
           enabled: false
         },
         series: [{
-          name: 'Year 1990',
+          name: '연령별 매출액 비율',
           data: data
         }]
       });
@@ -235,7 +231,7 @@
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-chart-bar me-1"></i>
-          Bar Chart Example
+          Pie Chart Example
         </div>
         <div class="card-body">
           <div id="container2"></div>
@@ -247,7 +243,7 @@
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-chart-pie me-1"></i>
-          Pie Chart Example
+          Bar Chart Example
         </div>
         <div class="card-body">
           <div id="container3"></div>
