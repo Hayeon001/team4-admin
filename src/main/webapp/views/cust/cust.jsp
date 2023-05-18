@@ -5,7 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -73,7 +73,7 @@
                     </c:forEach>
 
                     <!-- Cust Add Modal -->
-                    <div id="custaddmodal" class="modal fade" role="dialog">
+                    <div id="custaddmodal" class="modal" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -87,19 +87,19 @@
                                         </div>
                                         <div class="col-sm-10">
                                             <span id="check_id" class="bg-danger"></span>
-                                        </div>
+                                        </div><br/>
                                         <div class="form-group">
                                             <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" >
-                                        </div>
+                                        </div><br/>
                                         <div class="form-group">
                                             <input type="name" class="form-control" id="name" name="name" placeholder="Enter name" >
-                                        </div>
+                                        </div><br/>
                                         <div class="form-group">
                                             <input type="name" class="form-control" id="age" name="age" placeholder="Enter age" >
-                                        </div>
+                                        </div><br/>
                                         <div class="form-group">
                                             <input type="name" class="form-control" id="gender" name="gender" placeholder="Enter gender" >
-                                        </div>
+                                        </div><br/>
                                         <div>
                                             <button type="button" id="cust_add_btn" class="btn btn-outline-primary">ADD</button>
                                             <button type="button" class="btn btn-outline-primary" data-dismiss="modal">CLOSE</button>

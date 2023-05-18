@@ -40,7 +40,7 @@
                             <td>${obj.answer}</td>
                             <td>${obj.title}</td>
                             <td>${obj.cust_id}</td>
-                            <td>${obj.rdate}</td>
+                            <td><fmt:formatDate value="${obj.rdate}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                     </c:forEach>
 

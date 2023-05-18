@@ -41,6 +41,11 @@ public class MainController {
         model.addAttribute("center", "login");
         return "index";
     };
+    @RequestMapping("/detail")
+    public String detail(Model model) {
+        model.addAttribute("center", "detail");
+        return "index";
+    };
     @RequestMapping("/register")
     public String register(Model model) {
         model.addAttribute("center", "register");
@@ -56,6 +61,17 @@ public class MainController {
         try {
             adm.setPwd(encoder.encode(adm.getPwd()));
             admService.register(adm);
+            session.setAttribute("loginadm", adm);
+        } catch (Exception e) {
+            throw new Exception("registerimpl 시스템 에러");
+        }
+        return "index";
+    };
+    @RequestMapping("/updateimpl")
+    public String updateimpl(Model model, Adm adm, HttpSession session) throws Exception {
+        try {
+            adm.setPwd(encoder.encode(adm.getPwd()));
+            admService.modify(adm);
             session.setAttribute("loginadm", adm);
         } catch (Exception e) {
             throw new Exception("registerimpl 시스템 에러");
