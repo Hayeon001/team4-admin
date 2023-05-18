@@ -4,6 +4,13 @@
 <script>
     let answer = {
     init:function (){
+        $('#answer_btn').addClass('disabled');
+
+        var answerarea = $('#answerarea').val();
+        if (answerarea == '') {
+            $('#answer_btn').removeClass('disabled')
+        }
+
         $('#answer_btn').click(function (){
             answer.send(); //아이템_애드 라는 객체에 센드가 호출
             });
@@ -16,7 +23,6 @@
             $('#answer_form').submit();
         }
     };
-
     $(function (){
         answer.init();
     })
@@ -43,7 +49,7 @@
                     <input type="hidden" name="title" value="${gqna.title}">
                     <input type="hidden" name="cust_id" value="${gqna.cust_id}">
                     <input type="hidden" name="adm_id" value="admin01">
-                    <h4>Answer</h4><textarea style="width: 800px" name="content">${gqna.answer}</textarea>
+                    <h4>Answer</h4><textarea style="width: 800px" name="content" id="answerarea">${gqna.answer}</textarea>
                     </form>
                     <br/>
                     <div>

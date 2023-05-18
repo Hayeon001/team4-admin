@@ -1,9 +1,8 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Item;
+
 import com.kbstar.dto.Qna;
 import com.kbstar.service.QnaService;
-import com.kbstar.util.FileUploadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -44,6 +43,6 @@ public class QnaController {
     @RequestMapping("/answerimpl")
     public String answerimpl(Model model, Qna qna) throws Exception {
         qnaService.register(qna);
-        return "redirect:/qna/detail?id="+qna.getId();
+        return "redirect:/qna/detail?id="+qna.getQ_id();
     }
 }
