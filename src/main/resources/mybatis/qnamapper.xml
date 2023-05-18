@@ -17,7 +17,7 @@
     </select>
 
     <insert id="insert" parameterType="Qna">
-        INSERT INTO qna VALUES (qna_seq.NEXTVAL,#{title},#{content},SYSDATE,#{q_id},#{cust_id},#{adm_id})
+        INSERT INTO qna VALUES (qna_seq.NEXTVAL,#{title},#{content},SYSDATE,#{q_id},null,#{adm_id})
     </insert>
 
 </mapper>
