@@ -70,7 +70,7 @@
                     <c:forEach var="obj" items="${ilist}">
                         <tr>
                             <td>
-                                <img id="item_img" src="/uimg/${obj.imgname}">
+                                <img id="item_img" src="/uimg/${obj.imgname}" alt=${obj.imgname}>
                             </td>
                             <td><a href="/item/detail?id=${obj.id}">${obj.id}</a></td>
                             <td>${obj.cate_id}</td>
@@ -98,20 +98,31 @@
             <div class="modal-body">
 
                 <form id="register_form">
-                    <label class="control-label col-sm-2" for="name">Name:</label>
                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Input name" >
                     </div>
-                    <label class="control-label col-sm-2" for="price">Price:</label>
                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="price">Price:</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="Input price" >
                     </div>
-                    <label class="control-label col-sm-2" for="price">Category</label>
                     <div class="form-group">
-                        <input type="number" class="form-control" id="cate_id" name="cate_id" placeholder="Input category" >
+                        <label class="control-label col-sm-2" for="cate_id">Category</label>
+                        <select id="cate_id" name="cate_id" size="1">
+                            <option value="">선택하세요.</option>
+                            <option value="110">티셔츠</option>
+                            <option value="120">자켓</option>
+                            <option value="130">셔츠</option>
+                            <option value="210">청바지</option>
+                            <option value="220">반바지</option>
+                            <option value="230">치마</option>
+                            <option value="310">운동화</option>
+                            <option value="320">슬리퍼</option>
+                            <option value="330">구두</option>
+                        </select>
                     </div>
-                    <label class="control-label col-sm-2" for="img">IMG:</label>
                     <div class="form-group">
+                        <label class="control-label col-sm-2" for="img">IMG:</label>
                         <input type="file" class="form-control" id="img" name="img" placeholder="Input image" >
                     </div>
                     <div>
