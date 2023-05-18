@@ -21,6 +21,9 @@ public class Qna {
 
     private String question;
     private String answer;
+    private String cnt;
+    private String waiting;
+
 
     public Qna(int id, String question, String answer, String title, String cust_id, Date rdate){
         this.id = id;

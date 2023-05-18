@@ -25,8 +25,11 @@ public class QnaController {
     public String all(Model model) throws Exception {
         List<Qna> list = null;
         list = qnaService.get();
-//        log.info("list.get(0)={}", list.get(0)); 인덱스 0번 잘 들어 오는지 찾기
+        Integer cnt = null;
+        Qna qna = null;
+        qna = qnaService.count();
         model.addAttribute("qlist",list);
+        model.addAttribute("qna",qna);
         model.addAttribute("center",dir+"qna");
         return "index";
     }

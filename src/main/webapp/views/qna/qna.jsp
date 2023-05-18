@@ -4,16 +4,32 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-<%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Q&A</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="/">Move Main Page</a></li>
-            <li class="breadcrumb-item active">#</li>
-        </ol>
+        <br/>
+        <div class="row">
+        <div class="col-xl-2 col-md-6"><h1 class="mt-4">Q&A</h1></div>
+
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg text-black mb-4">
+                    <div class="card-body"><i class="fas fa-?"></i>답변대기중</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a><span id="wating">${qna.waiting}</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg text-black mb-4">
+                    <div class="card-body"><i class="fas fa-person"></i> 답변완료</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a><span id="done">${qna.cnt}</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>

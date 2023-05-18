@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface QnaMapper extends KBMapper<Integer, Qna> {
-
+    public Qna count();
 }

@@ -33,6 +33,10 @@ public class QnaService implements KBService<Integer, Qna> {
         return mapper.select(s);
     }
 
+    public Qna count() throws Exception {
+        return mapper.count();
+    }
+
     @Override
     public List<Qna> get() throws Exception {
         return mapper.selectall();
