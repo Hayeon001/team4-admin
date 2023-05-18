@@ -4,7 +4,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -76,7 +76,7 @@
                             <td>${obj.cate_id}</td>
                             <td>${obj.name}</td>
                             <td>${obj.price}</td>
-                            <td>${obj.rdate}</td>
+                            <td><fmt:formatDate value="${obj.rdate}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                     </c:forEach>
 
@@ -88,7 +88,7 @@
 </main>
 
 <!-- Add Modal -->
-<div id="itemaddmodal" class="modal fade" role="dialog">
+<div id="itemaddmodal" class="modal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -112,19 +112,19 @@
                             <option value="320">슬리퍼</option>
                             <option value="330">구두</option>
                         </select>
-                    </div>
+                    </div><br/>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Input name" >
-                    </div>
+                    </div><br/>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="price">Price:</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="Input price" >
-                    </div>
+                    </div><br/>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="img">IMG:</label>
                         <input type="file" class="form-control" id="img" name="img" placeholder="Input image" >
-                    </div>
+                    </div><br/>
                     <div>
                         <button type="button" id="item_add_btn" class="btn btn-outline-primary">ADD</button>
                         <button type="button" id="modalclose_btn" class="btn btn-outline-primary" data-dismiss="modal">CLOSE</button>
