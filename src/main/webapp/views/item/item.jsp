@@ -98,17 +98,9 @@
             <div class="modal-body">
 
                 <form id="register_form">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Input name" >
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="price">Price:</label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="Input price" >
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="cate_id">Category</label>
-                        <select id="cate_id" name="cate_id" size="1">
+                    <div class="form-group" >
+                        <label class="control-label col-sm-3" for="cate_id">Category: </label>
+                        <select id="cate_id" name="cate_id" size="1" >
                             <option value="">선택하세요.</option>
                             <option value="110">티셔츠</option>
                             <option value="120">자켓</option>
@@ -120,6 +112,14 @@
                             <option value="320">슬리퍼</option>
                             <option value="330">구두</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Input name" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="price">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Input price" >
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="img">IMG:</label>
