@@ -8,7 +8,7 @@
         SELECT q1.id, NVL2(q2.q_id,'Y','N') as answer, q1.title, q1.cust_id, q1.rdate
         FROM qna q1 LEFT OUTER JOIN qna q2 ON q1.id = q2.q_id
         where q1.Q_ID is null
-        order by q1.rdate
+        order by q1.rdate desc
     </select>
 
     <select id="count" resultType="Qna">

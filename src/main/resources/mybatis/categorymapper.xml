@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kbstar.mapper.CategoryMapper">
+
+    <select id="selectall" resultType="Category">
+        SELECT a.id,a.cate_name,a.top_cate,b.cate_name as topname
+        FROM CATEGORY a LEFT OUTER JOIN CATEGORY b
+        ON a.top_cate= b.id
+        order by top_cate, id
+    </select>
+
+    <insert id="insert" parameterType="Category">
+        INSERT INTO CATEGORY VALUES (#{id},#{cate_name}#{top_cate})
+    </insert>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM CATEGORY WHERE ID=#{id}
+    </delete>
+
+</mapper>
