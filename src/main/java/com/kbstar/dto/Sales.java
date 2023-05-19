@@ -14,10 +14,9 @@ import java.util.Date;
 
 public class Sales {
 //    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String item_id;
-    private int cust_id;
     private int id;
+    private int item_id;
+    private String cust_id;
     private Date rdate;
-    private int price;
 }
 

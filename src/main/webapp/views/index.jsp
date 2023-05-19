@@ -83,6 +83,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Charts
                     </a>
+                    <a class="nav-link" href="/sales">
+                        <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
+                        Order List
+                    </a>
                 </div>
             </div>
             <c:choose>
