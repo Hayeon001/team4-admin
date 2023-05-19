@@ -98,7 +98,12 @@
                                             <input type="name" class="form-control" id="age" name="age" placeholder="Enter age" >
                                         </div><br/>
                                         <div class="form-group">
-                                            <input type="name" class="form-control" id="gender" name="gender" placeholder="Enter gender" >
+
+                                            <select class="form-select" id="gender" name="gender">
+                                                <option>Select gender</option>
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                            </select>
                                         </div><br/>
                                         <div>
                                             <button type="button" id="cust_add_btn" class="btn btn-outline-primary">ADD</button>

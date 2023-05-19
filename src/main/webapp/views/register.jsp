@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <script>
   let register = {
@@ -22,7 +23,7 @@
         }
 
       })
-      $('#lev').keyup( () => {
+      $('#lev').change( () => {
         let id = $("#id").val();
         let pwd = $("#pwd").val();
         let lev = $("#lev").val();
@@ -101,10 +102,13 @@
                     </div>
                     <div style="height:10px; font-size:12px; margin-left:50%; color:red;" id="pwderror"></div>
                   </div>
-
-                  <div class="form-floating mb-3">
-                    <input class="form-control" id="lev" type="number" name="lev" placeholder="Enter Level" />
-                    <label for="id">Authority level</label>
+                  <div>
+                    <select class="form-select" id="lev" name="lev">
+                      <option id="opt" vlaue="">Select Authority level</option>
+                      <option value="1">Level: 1</option>
+                      <option value="2">Level: 2</option>
+                      <option value="3">Level: 3</option>
+                    </select>
                   </div>
                   <div class="mt-4 mb-0">
                     <div class="d-grid">
