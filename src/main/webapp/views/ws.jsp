@@ -5,7 +5,7 @@
 
 <style>
     #to {
-        width: 400px;
+        width: 700px;
         height: 200px;
         overflow: auto;
         border: 2px solid lightgray;
@@ -31,6 +31,7 @@
                     "<h4>" + "${loginadm.id}" +":"+
                     $("#totext").val()
                     + "</h4>");
+                $("#totext").val('');
             });
         },
         connect:function(){
