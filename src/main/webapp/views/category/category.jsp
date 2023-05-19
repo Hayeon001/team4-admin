@@ -29,7 +29,6 @@
     })
 </script>
 
-<main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Cust ALL</h1>
         <ol class="breadcrumb mb-4">
@@ -76,8 +75,6 @@
             </div>
         </div>
     </div>
-</main>
-
 <!-- Add Modal -->
 <div id="addmodal" class="modal" role="dialog">
     <div class="modal-dialog">
@@ -90,23 +87,25 @@
 
                 <form id="register_form">
                     <div class="form-group" >
-                        <label class="control-label col-sm-3" for="top_cate">Top Category: </label>
+                        <label class="control-label col-sm-4" for="top_cate">Top Category: </label>
                         <select id="top_cate" name="top_cate" size="1" >
                             <option value="">선택하세요.</option>
-                            <option value="110">티셔츠</option>
-                            <option value="120">자켓</option>
-                            <option value="130">셔츠</option>
+                            <option value=100>상의</option>
+                            <option value=200>하의</option>
+                            <option value=300>신발</option>
+                            <option value=400>언더웨어</option>
+                            <option value=null>null</option>
                         </select>
                     </div><br/>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Input name" >
+                        <label class="control-label col-sm-2" for="id">ID:</label>
+                        <input type="number" class="form-control" id="id" name="id" placeholder="Input ID: 3자리의 숫자를 입력하세요" >
                     </div><br/>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="price">Price:</label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="Input price" >
+                        <label class="control-label col-sm-2" for="cate_name">Name:</label>
+                        <input type="text" class="form-control" id="cate_name" name="cate_name" placeholder="Input name" >
                     </div><br/>
-                    <div>
+                    <div class="form-group">
                         <button type="button" id="add_btn" class="btn btn-outline-primary">ADD</button>
                         <button type="button" id="modalclose_btn" class="btn btn-outline-primary" data-dismiss="modal">CLOSE</button>
                     </div>

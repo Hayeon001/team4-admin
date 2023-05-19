@@ -12,7 +12,7 @@
     </select>
 
     <insert id="insert" parameterType="Category">
-        INSERT INTO CATEGORY VALUES (#{id},#{cate_name}#{top_cate})
+        INSERT INTO CATEGORY VALUES (#{id},#{cate_name},#{top_cate})
     </insert>
 
     <delete id="delete" parameterType="Integer">

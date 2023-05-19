@@ -15,7 +15,7 @@ public class CategoryService implements KBService<Integer, Category> {
 
     @Override
     public void register(Category category) throws Exception {
-
+        mapper.insert(category);
     }
 
     @Override
